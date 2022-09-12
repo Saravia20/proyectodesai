@@ -12,7 +12,7 @@ public class MainAPP {
                                                     "root"
         );
 
-        String query= "select * from Users ";
+        String query= "select * from Users "; //es un string que luego se pasa como valor en el resultset
         Statement stm=cnx.createStatement(); //ayuda a ejecutar query
         ResultSet rs= stm.executeQuery(query); //almacenamos los datos de la consulta realizada
 
