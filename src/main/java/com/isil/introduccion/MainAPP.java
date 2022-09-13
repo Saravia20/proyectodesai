@@ -12,9 +12,9 @@ public class MainAPP {
                                                     "root"
         );
 
-        String query= "select * from Users "; //es un string que luego se pasa como valor en el resultset
-        Statement stm=cnx.createStatement(); //ayuda a ejecutar query
-        ResultSet rs= stm.executeQuery(query); //almacenamos los datos de la consulta realizada
+        String query= "select * from Users ";
+        Statement stm=cnx.createStatement(); //statement consulta
+        ResultSet rs= stm.executeQuery(query); //ejecutar query y almacenar
 
         // dependencias:https://mvnrepository.com/search?q=sql+server+
 
@@ -22,7 +22,8 @@ public class MainAPP {
             System.out.println(rs.getString("idUser"));
             System.out.println(rs.getString("name"));
             System.out.println(rs.getString("city"));
-        }
 
+        }
+        cnx.close();
     }
 }
