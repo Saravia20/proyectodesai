@@ -7,18 +7,16 @@ import java.sql.Statement;
 
 public class AppSql {
     public static void main(String[] args)  throws Exception {
-        Class.forName("com.microsoft.jdbc.sqlserver.SqlServerDriver");
-        Connection cnx= DriverManager.getConnection("jdbc:mysql://localhost:3306/persona",
+        Class.forName("com.microsoft.sqlserver.jdbc.SqlServerDriver");
+        Connection cnx= DriverManager.getConnection("jdbc:sqlserver://localhost:3306;databaseName=mantenimiento",
                 "root",
                 "root"
         );
         Statement stmt2= cnx.createStatement();
-        ResultSet rs= stmt2.executeQuery("select * from Users where name='Ronaldo'");
+        ResultSet rs= stmt2.executeQuery("select * from Tb_Cliente where idCliente=1");
 
         while (rs.next()) {
-            System.out.println( rs.getString("name") + "\n" +
-                    rs.getString("phone") + "\n" +
-                    rs.getString("city"));
+            System.out.println( rs.getString("cod_ubigeo"));
 
         }
     }
